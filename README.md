@@ -4,6 +4,10 @@ SIOR 2022년 AI 스터디
 
 ## 강의  
 https://deeplearningzerotoall.github.io/season2/lec_tensorflow.html  
+  
+Github: https://github.com/deeplearningzerotoall/TensorFlow  
+YouTube: http://bit.ly/2HHrybT  
+Slide: http://bit.ly/2LQMKvk  
 
 ## 방식:
 1명 주도 토론 (1명은 로테이션)  
