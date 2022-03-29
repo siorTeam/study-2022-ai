@@ -2,91 +2,64 @@
 
 SIOR 2022년 AI 스터디
 
-## Getting started
+## 강의
+https://deeplearningzerotoall.github.io/season2/lec_tensorflow.html 
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 방식:
+1명 주도 토론 (1명은 로테이션)
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## 일정:
+일주일에 1번 목요일 21:00~23:00
 
-## Add your files
+### 4/21:
+Lec 01: 기본적인 Machine Learning 의 용어와 개념 설명
+Lec 02: Simple Linear Regression
+Lab 02: Simple Linear Regression 를 TensorFlow 로 구현하기
+Lec 03: Linear Regression and How to minimize cost
+Lab 03: Linear Regression and How to minimize cost 를 TensorFlow 로 구현하기
+Lec 04: Multi-variable Linear Regression
+Lab 04: Multi-variable Linear Regression를 TensorFlow 로 구현하기
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### 4/28:
+Lec 05-1: Logistic Regression/Classification 의 소개
+Lec 05-2: Logistic Regression/Classification 의 cost 함수, 최소화
+Lab 05-3: Logistic Regression/Classification 를 TensorFlow 로 구현하기
+Lec 06-1: Softmax Regression: 기본 개념소개
+Lec 06-2: Softmax Classifier의 cost함수
+Lab 06-1: Softmax classifier 를 TensorFlow 로 구현하기
+Lab 06-2: Fancy Softmax classifier 를 TensorFlow 로 구현하기
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/skku-sior/study_ai/2022-ai.git
-git branch -M main
-git push -uf origin main
-```
+### 5/5:
+Lab 07-1: Application & Tips: 학습률(Learning Rate)과 데이터 전처리(Data Preprocessing)
+Lab 07-2-1: Application & Tips: 오버피팅(Overfitting) & Solutions
+Lab 07-2-2: Application & Tips: 학습률, 전처리, 오버피팅을 TensorFlow 로 실습
+Lab 07-3-1: Application & Tips: Data & Learning
+Lab 07-3-2: Application & Tips: 다양한 Dataset 으로 실습
 
-## Integrate with your tools
+### 5/12:
+Lec 08-1: 딥러닝의 기본 개념: 시작과 XOR 문제
+Lec 08-2: 딥러닝의 기본 개념2: Back-propagation 과 2006/2007 ‘딥’의 출현
+Lec 09-1: XOR 문제 딥러닝으로 풀기
+Lec 09-2: 딥넷트웍 학습 시키기 (backpropagation)
+Lab 09-1: Neural Net for XOR
+Lab 09-2: Tensorboard (Neural Net for XOR)
 
-- [ ] [Set up project integrations](https://gitlab.com/skku-sior/study_ai/2022-ai/-/settings/integrations)
+### 5/19:
+Lab 10-1: Sigmoid 보다 ReLU가 더 좋아
+Lab 10-2: Weight 초기화 잘해보자d
+Lab 10-3: Dropout
+Lab 10-4: Batch Normalization
 
-## Collaborate with your team
+### 5/26:
+Lec 11-1: ConvNet의 Conv 레이어 만들기
+Lec 11-2: ConvNet Max pooling 과 Full Network
+Lec 11-3: ConvNet의 활용예
+Lab 11-0-1: CNN Basic: Convolution
+Lab 11-0-2: CNN Basic: Pooling
+Lab 11-2: mnist cnn keras functional eager
+Lab 11-1: mnist cnn keras sequential eager
+Lab-11-3: mnist cnn keras subclassing eager
+Lab-11-4: mnist cnn keras ensemble eager
+Lab-11-5: mnist cnn best keras eager
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### 6/16: 뒤풀이
