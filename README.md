@@ -3,6 +3,7 @@
 SIOR 2022년 AI 스터디  
 
 ## 강의  
+http://hunkim.github.io/ml/  
 https://deeplearningzerotoall.github.io/season2/lec_tensorflow.html  
   
 Github: https://github.com/deeplearningzerotoall/TensorFlow  
