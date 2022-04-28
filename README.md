@@ -16,7 +16,7 @@ Slide: http://bit.ly/2LQMKvk
 ## 일정:
 일주일에 1번 목요일 21:00~23:00  
 
-### 4/21: 황찬욱  
+### [4/21: 황찬욱](/Weekly%20Summary/AI_STUDY_1%EC%A3%BC%EC%B0%A8.pdf)  
 Lec 01: 기본적인 Machine Learning 의 용어와 개념 설명  
 Lec 02: Simple Linear Regression  
 Lab 02: Simple Linear Regression 를 TensorFlow 로 구현하기  
@@ -25,7 +25,7 @@ Lab 03: Linear Regression and How to minimize cost 를 TensorFlow 로 구현하�
 Lec 04: Multi-variable Linear Regression  
 Lab 04: Multi-variable Linear Regression를 TensorFlow 로 구현하기  
 
-### 4/28: 박창민  
+### [4/28: 박창민](/Weekly%20Summary/AI_STUDY_2%EC%A3%BC%EC%B0%A8.pdf)
 Lec 05-1: Logistic Regression/Classification 의 소개  
 Lec 05-2: Logistic Regression/Classification 의 cost 함수, 최소화  
 Lab 05-3: Logistic Regression/Classification 를 TensorFlow 로 구현하기  
