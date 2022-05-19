@@ -34,14 +34,14 @@ Lec 06-2: Softmax Classifier의 cost함수
 Lab 06-1: Softmax classifier 를 TensorFlow 로 구현하기  
 Lab 06-2: Fancy Softmax classifier 를 TensorFlow 로 구현하기  
 
-### 5/5: 강오령  
+### [5/5: 강오령](/Weekly%20Summary/AI_STUDY_3%EC%A3%BC%EC%B0%A8.pdf)  
 Lab 07-1: Application & Tips: 학습률(Learning Rate)과 데이터 전처리(Data Preprocessing)  
 Lab 07-2-1: Application & Tips: 오버피팅(Overfitting) & Solutions  
 Lab 07-2-2: Application & Tips: 학습률, 전처리, 오버피팅을 TensorFlow 로 실습  
 Lab 07-3-1: Application & Tips: Data & Learning  
 Lab 07-3-2: Application & Tips: 다양한 Dataset 으로 실습  
 
-### 5/12: 이승민  
+### [5/12: 이승민](/Weekly%20Summary/AI_STUDY_4%EC%A3%BC%EC%B0%A8.pdf)  
 Lec 08-1: 딥러닝의 기본 개념: 시작과 XOR 문제  
 Lec 08-2: 딥러닝의 기본 개념2: Back-propagation 과 2006/2007 ‘딥’의 출현  
 Lec 09-1: XOR 문제 딥러닝으로 풀기  
@@ -49,7 +49,7 @@ Lec 09-2: 딥넷트웍 학습 시키기 (backpropagation)
 Lab 09-1: Neural Net for XOR  
 Lab 09-2: Tensorboard (Neural Net for XOR)  
 
-### 5/19: 황찬욱  
+### [5/19: 황찬욱](/Weekly%20Summary/AI_STUDY_5%EC%A3%BC%EC%B0%A8.pdf)  
 Lab 10-1: Sigmoid 보다 ReLU가 더 좋아  
 Lab 10-2: Weight 초기화 잘해보자d  
 Lab 10-3: Dropout  
