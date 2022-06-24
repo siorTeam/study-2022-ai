@@ -55,7 +55,7 @@ Lab 10-2: Weight 초기화 잘해보자d
 Lab 10-3: Dropout  
 Lab 10-4: Batch Normalization  
 
-### 5/26: 박창민  
+### [6/24: 박창민](/Weekly%20Summary/AI_STUDY_6%EC%A3%BC%EC%B0%A8.pdf)  
 Lec 11-1: ConvNet의 Conv 레이어 만들기  
 Lec 11-2: ConvNet Max pooling 과 Full Network  
 Lec 11-3: ConvNet의 활용예  
@@ -67,4 +67,5 @@ Lab-11-3: mnist cnn keras subclassing eager
 Lab-11-4: mnist cnn keras ensemble eager  
 Lab-11-5: mnist cnn best keras eager  
  
-### 6/16: 뒤풀이  
+### 7/00: 뒤풀이
+
