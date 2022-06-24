@@ -69,3 +69,35 @@ Lab-11-5: mnist cnn best keras eager
  
 ### 7/00: 뒤풀이
 
+
+
+
+
+
+## 대회
+
+https://dacon.io/competitions/official/235902/overview/description
+
+모델링 설계 경험과 대회 참여 목적
+
+첫 미팅 일자: 7월 8일 PM 09:00(1시간예상)
+
+- 미니 프로젝트 진행 사항 얘기
+- ENV: colab
+
+gitlab의 프로젝트로 폴더 공유, 
+`project/`폴더 아래에 각자 브랜치 생성 후(예를들어, `--pcm`),
+알아서 관리(폴더내)
+
+### 연습 프로젝트
+
+1. 심리 성향 예측 AI 경진대회
+
+> https://dacon.io/competitions/official/235647/data
+
+base line code
+> https://dacon.io/competitions/official/235647/codeshare/1699?page=1&dtype=recent
+
+2. 한국어 글자체 이미지 데이터
+
+> https://aihub.or.kr/aidata/133
