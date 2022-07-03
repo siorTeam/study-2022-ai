@@ -85,9 +85,9 @@ https://dacon.io/competitions/official/235902/overview/description
 - 미니 프로젝트 진행 사항 얘기
 - ENV: colab
 
-gitlab의 프로젝트로 폴더 공유, 
-`project/`폴더 아래에 각자 브랜치 생성 후(예를들어, `--pcm`),
-알아서 관리(폴더내)
+gitlab의 프로젝트로 폴더 공유,
+각자 브랜치 생성 후(예를들어, `sub-pcm`),
+`project/`폴더 아래에 알아서 관리(폴더내)
 
 ### 연습 프로젝트
 
