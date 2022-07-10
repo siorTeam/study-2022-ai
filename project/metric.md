@@ -3,6 +3,7 @@
 1. loss
 
 	모델 최적화(error를 최소로 해주는 parameter 변화)를 위한 값을 도출하는 함수
+
 	정확하게 맞출 확률의 하한여부(Evidence Lower Bound)?
 
 	지금까지 사용한 함수
@@ -28,7 +29,7 @@ E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 
 앞에 R(root)이 붙으면 전체에 제곱근 => 보통 예측값과 실값의 차가 클 때 사용
 
-앞에 N(normalized)이 붙으면 => 값을 normalizing한 경우로 $\bar{y}=y_{max}-y_{min}$로 나누어주어 전체 데이터셋의 scale을 무시하기 위해 사용
+앞에 N(normalized)이 붙으면 => 값을 normalizing한 경우로 $`\bar{y}=y_{max}-y_{min}`$로 나누어주어 전체 데이터셋의 scale을 무시하기 위해 사용
 
 보통 Mean을 이용하지만 경우에 따라서는 Median을 이용하기도 함
 
@@ -36,7 +37,9 @@ E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 
 	1. 절대적인 오차의 크기만 지표화 => 직관적 해석
 	2. 입력 크기에 의존적
-	$$\sum_{i}^{N}(y_i-\hat{y_i})^2$$
+	```math
+	\sum_{i}^{N}(y_i-\hat{y_i})^2
+	```
 
 - Mean Absolute Error(MAE)
 
@@ -44,7 +47,7 @@ E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 	2. 결과값과 동일한 단위
 	3. 절댓값 => Under/Over-Estimates 인지 파악하기 어려움
 	4. 입력 크기에 의존적
-	$$\frac{1}{N}\sum_{i}^{N}\left|y_i-\hat{y_i}\right|$$
+	- $`\frac{1}{N}\sum_{i}^{N}\left|y_i-\hat{y_i}\right|`$
 
 - Mean Squared Error(MSE)
 
@@ -53,25 +56,25 @@ E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 	3. 잔차(Residual)제곱 => Under/Over-Estimates 인지 파악하기 어려움
 	4. 입력 크기에 의존적
 	5. 실제값과 유사한 단위로 사용하기 위해 RMSE로 적용할 수 있음
-	$$\frac{1}{N}\sum_{i}^{N}(y_i-\hat{y_i})^2$$
+	- $`\frac{1}{N}\sum_{i}^{N}(y_i-\hat{y_i})^2`$
 
 - Mean Squared Logarithmic Error(MSLE)
 
 	1. outlier에 둔감robust
 	2. 상대적 Error 측정
 	3. Under-Estimation에 큰 패널티 부여
-	$$\frac{1}{N}\sum_{i}^{N}(log(y_i+1)-log(\hat{y_i}+1))^2$$
+	- $`\frac{1}{N}\sum_{i}^{N}(log(y_i+1)-log(\hat{y_i}+1))^2`$
 
 - Mean Absolute Percentage Error(MAPE)
 
 	1. 입력 크기에 의존적이지 않음
 	2. outlier에 둔감robust
-	$$\frac{1}{N}\sum_{i}^{N}\left|\frac{y_i-\hat{y_i}}{y_i}\right|\cdot100(\%)$$
+	- $`\frac{1}{N}\sum_{i}^{N}\left|\frac{y_i-\hat{y_i}}{y_i}\right|\cdot100(\%)`$
 
 - Mean Percentage Error(MPE)
 
 	1. Under/Over-Estimates 파악하기 쉬움
-	$$\frac{1}{N}\sum_{i}^{N}(y_i-\hat{y_i})\cdot100(\%)$$ㄴ
+	- $`\frac{1}{N}\sum_{i}^{N}(y_i-\hat{y_i})\cdot100(\%)`$
 
 - 결정계수, R-squaured, R2, Coefficient of determination
 
@@ -80,21 +83,21 @@ E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 	3. `1`에 가까울 수록 모델이 좋은 성능을 가짐, 경우에 따라서는 `0`보다 작은 값이 나올 수 있는데(일괄 평균으로 예측할 때보다 성능이 떨어지는 경우) 이는 모델과 전혀 상관없는 임의의 데이터를 사용하는 경우라 할 수 있음
 	4. ANOVA(Analysis of Variance, 분산분석)
 
-	$$R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}$$
+	- $`R^2 = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}`$
 
 	~~용어가 상당히 혼용되어 있는데 수식보고 이해할 것~~
 
-	($\bar{y}=\frac{1}{N}\sum_{i}^{N}y_i$)
-	- Sum of Squared Total(SST, TSS): 총제곱합, **전체의 변동**(편차)을 나타냄: $\sum_{i}^{N}(y_i-\bar{y_i})^2$
-	- Sum of Squared Residual(SSR, RSS)(Sum of Squared Error(SSE)): 잔차 제곱합, 모형에 의해 **설명이 되지 않는 변동**을 나타냄: $\sum_{i}^{N}(y_i-\hat{y_i})^2$
-	- Explained Sum of Squares(SSE)(Sum of Squared Regression(SSR)): 회귀 제곱합, 회귀에 대한 변동성, 즉 모형에 의해 **설명된 변동**을 나타냄: $\sum_{i}^{N}(\hat{y_i}-\bar{y_i})^2$
+	($`\bar{y}=\frac{1}{N}\sum_{i}^{N}y_i`$)
+	- Sum of Squared Total(SST, TSS): 총제곱합, **전체의 변동**(편차)을 나타냄: $`\sum_{i}^{N}(y_i-\bar{y_i})^2`$
+	- Sum of Squared Residual(SSR, RSS)(Sum of Squared Error(SSE)): 잔차 제곱합, 모형에 의해 **설명이 되지 않는 변동**을 나타냄: $`\sum_{i}^{N}(y_i-\hat{y_i})^2`$
+	- Explained Sum of Squares(SSE)(Sum of Squared Regression(SSR)): 회귀 제곱합, 회귀에 대한 변동성, 즉 모형에 의해 **설명된 변동**을 나타냄: $`\sum_{i}^{N}(\hat{y_i}-\bar{y_i})^2`$
 
 - Adjusted R2
 
 	결정계수는 학습 데이터의 크기가 증가할 수록 모형의 성능과 상관없이 값이 커지는 경향, 독립 변수 개수의 증가에도 동일한 경향이 존재하기에 이를 수정한 방법
 	1. Adjusted R2가 R2보다 값이 작다면 이는 불필요한 독립변수가 존재한다는 지표로도 해석할 수 있음.[출처](EasyFlow회귀분석, 한나래, pp. 48 ~ 50, 140~142)
 
-	$$R^2_{adj} = 1-(1-R^2)\left(\frac{N-1}{N-k}\right)=1-\left(\frac{\frac{SSR}{N-k}}{\frac{SST}{N-1}}\right),\,N:데이터크기,\,k:독립변수개수$$
+	- $`R^2_{adj} = 1-(1-R^2)\left(\frac{N-1}{N-k}\right)=1-\left(\frac{\frac{SSR}{N-k}}{\frac{SST}{N-1}}\right),\,N:데이터크기,\,k:독립변수개수`$
 
 ## 분류
 - **Confusion Matrix**
@@ -128,14 +131,14 @@ True Positive Rate(TPR) <-> False Positive Rate(FPR)
 
 ### F-score, F-Measure
 
-General $F_\beta-score$, 여기서 $\beta$값은 R(recall)이 P(precision)의 $\beta$배 만큼 중요하다고 고려될 때 나타내는 값이다. ($\beta$는 양수만 고려됌)
+General $`F_\beta-score`$, 여기서 $`\beta`$값은 R(recall)이 P(precision)의 $`\beta`$배 만큼 중요하다고 고려될 때 나타내는 값이다. ($`\beta`$는 양수만 고려됌)
 
 Van Rijsbergen's effectiveness measure에 기반한 아이디어
 
 $$F-score = \frac{1}{\alpha\frac{1}{P}+(1-\alpha)\frac{1}{R}} = \frac{(\beta^2+1)PR}{\beta^2P+R}$$
 $$\alpha=\frac{1}{1+\beta^2}$$
 
-$\alpha=1/2, \beta^2=1$일 때, P와 R은 같은 가중치를 가지는 F-score이므로
+$`\alpha=1/2, \beta^2=1`$일 때, P와 R은 같은 가중치를 가지는 F-score이므로
 
 일반적으로 F1-score는 P와 R의 조화평균을 나타내는 지표로도 사용
 
