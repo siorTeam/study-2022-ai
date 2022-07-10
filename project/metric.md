@@ -27,9 +27,9 @@
 ## 회귀
 E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 
-앞에 R(root)이 붙으면 전체에 제곱근 => 보통 예측값과 실값의 차가 클 때 사용
+앞에 R(root)이 붙으면 => 전체에 제곱근 => 보통 예측값과 실값의 차가 클 때 사용
 
-앞에 N(normalized)이 붙으면 => 값을 normalizing한 경우로 $`\bar{y}=y_{max}-y_{min}`$로 나누어주어 전체 데이터셋의 scale을 무시하기 위해 사용
+앞에 N(normalized)이 붙으면 => 값을 normalizing한 경우로 $`\bar{y}=y_{max}-y_{min}`$로 나눔 => 전체 데이터셋의 scale을 무시하기 위해 사용
 
 보통 Mean을 이용하지만 경우에 따라서는 Median을 이용하기도 함
 
