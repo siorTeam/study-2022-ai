@@ -117,15 +117,17 @@ E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 
 ## metrics 종류
 
-보통 accuracy, precision, Recall, F-score, AUC를 많이 사용
+보통 Accuracy, Precision, Recall, F-score, AUC를 많이 사용
 
 ### 1. 정확도 Accuracy
 
 전체에서 True에 해당하는 비율
 
 ```math
-total = P + N = PP + PN = TP + FP + FN + TN
-\frac{TP + FP}{total}
+total = P + N = PP + PN
+\\ = TP + FP + FN + TN
+\\
+Accuracy = \frac{TP + TN}{total}
 ```
 
 ### 2. 정밀도 Precision
@@ -136,9 +138,9 @@ Positive Predictive Value(PPV)
 
 ```math
 total = PP = TP + FP
-\frac{TP}{total}
+\\
+Precision = \frac{TP}{total}
 ```
- <-> Negative Predictive Value(NPV)
 
 ### 3. 재현도 Recall
 
@@ -148,7 +150,8 @@ total = PP = TP + FP
 
 ```math
 total = P = TP + FN
-\frac{TP}{total}
+\\
+Recall = \frac{TP}{total}
 ```
 
 ### 4. 특이도 Specificity
@@ -159,7 +162,8 @@ total = P = TP + FN
 
 ```math
 total = N = FP + TN
-\frac{TN}{total}
+\\
+Specificity = \frac{TN}{total}
 ```
 
 ### 5. other metrics from confusion matrix
@@ -174,12 +178,13 @@ Van Rijsbergen's effectiveness measure에 기반한 아이디어
 
 ```math
 F-score = \frac{1}{\alpha\frac{1}{P}+(1-\alpha)\frac{1}{R}} = \frac{(\beta^2+1)PR}{\beta^2P+R}
-\alpha=\frac{1}{1+\beta^2}
+\\
+\left(\alpha=\frac{1}{1+\beta^2}\right)
 ```
 
 $`\alpha=1/2, \beta^2=1`$일 때, P와 R은 같은 가중치를 가지는 F-score이므로
 
-일반적으로 F1-score는 P와 R의 조화평균을 나타내는 지표로도 사용
+일반적으로 F1-score($`\beta=1`$)는 P와 R의 조화평균을 나타내는 지표로도 사용
 
 특정 케이스에 대한 데이터가 부족(불균형)할 때(TN의 데이터가 FP, FN, TP와 다르게 현저히 부족할 때와 같은 상황) 많이 사용한다
 
@@ -191,7 +196,8 @@ fall-out : False Positive Rate(FPR) = 1 - Specificity
 
 ```math
 total = N = FP + TN
-\frac{FP}{total}
+\\
+fall-out = \frac{FP}{total}
 ```
 
 fall-out(FPR)에 대해 Sensitivity(TPR)의 변화를 평면으로 시각화한 곡선이 ROC curve이다
@@ -214,10 +220,15 @@ ROC curve의 적분값(아래 면적 크기)을 나타낸다
 1. multi-class classification
 2. multi-label classification
 
-두 확장 binary 에서의 metric을 구하는 방식을 확장하여 사용할 수 있다.
+두 가지 모두, 위의 metric 방식을 확장하여 사용할 수 있다.
+
 이런 확장된 metric(Aggregate Metrics)은 크게 2가지가 존재한다.
 1. Macro Averaging: 각 class의 metric을 구한 뒤, 이들을 평균낸다
 2. Micro Averaging: 모든 class를 하나의 confusion matrix로 합친 뒤, metric을 구한다.
+
+### multi-class classification로의 확장
+
+예측 데이터가 각 class끼리 분명히 구분되므로 Macro Averaging, Micro Averaging을 상황에 맞게 적용하면 된다.
 
 ### multi-label classification로의 확장
 
