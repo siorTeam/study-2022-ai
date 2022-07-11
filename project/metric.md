@@ -25,6 +25,7 @@
 - 분산분석
 
 ## 회귀
+
 E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 
 앞에 R(root)이 붙으면 => 전체에 제곱근 => 보통 예측값과 실값의 차가 클 때 사용
@@ -98,6 +99,7 @@ E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 	- $`R^2_{adj} = 1-(1-R^2)\left(\frac{N-1}{N-k}\right)=1-\left(\frac{\frac{SSR}{N-k}}{\frac{SST}{N-1}}\right),\,N:데이터크기,\,k:독립변수개수`$
 
 ## 분류
+
 - **Confusion Matrix**
 
 # Confusion Matrix
@@ -106,55 +108,105 @@ E(error)(D:Deviation로 쓰기도 함), 편차를 이용한 주요 지표
 
 ![Confusion Matrix in binary class](./src/Confusion%20Matrix.png)
 
+## 각 case 설명
+
+- TP: 양성이라 판단했고, 실제로 양성인 경우
+- FP: 양성이라 판단했지만, 실제로는 음성인 경우
+- TN: 음성이라 판단했고, 실제로 음성인 경우
+- FN: 음성이라 판단했지만, 실제로는 양성인 경우
+
+## metrics 종류
+
 보통 accuracy, precision, Recall, F-score, AUC를 많이 사용
 
-### 정확도 Accuracy
-= True / 전체
+### 1. 정확도 Accuracy
 
-### 정밀도 Precision
-= 해당 결과의 측정에서, True / 전체
-Positive Predictive Value(PPV) <-> Negative Predictive Value(NPV)
+전체에서 True에 해당하는 비율
 
-### 재현도 Recall
-= 해당 결과의 실제에서, True / 전체
+```math
+total = P + N = PP + PN = TP + FP + FN + TN
+\frac{TP + FP}{total}
+```
 
-### 민감도 Sensitivity
-= 재현도
+### 2. 정밀도 Precision
 
-### 특이도 Specificity
-민감도와 반비례
-True Positive Rate(TPR) <-> False Positive Rate(FPR)
+Positive Predictive Value(PPV)
 
-#### Trade-off, Error
+해당 결과에서 실제로 맞은 비율
 
-### F-score, F-Measure
+```math
+total = PP = TP + FP
+\frac{TP}{total}
+```
+ <-> Negative Predictive Value(NPV)
+
+### 3. 재현도 Recall
+
+통계학에서는 민감도(Sensitivity), True Positive Rate(TPR)라는 용어로, 의료나 다른 분야에서는 적중률(hit rate)이라는 단어로도 사용
+
+해당 실재에서 결과로 맞은 비율(양성에만 해당)
+
+```math
+total = P = TP + FN
+\frac{TP}{total}
+```
+
+### 4. 특이도 Specificity
+
+통계학에서는 True Negative Rate(TNR)하는 단어로도 사용
+
+해당 실재에서 결과로 맞은 비율(음성에만 해당)
+
+```math
+total = N = FP + TN
+\frac{TN}{total}
+```
+
+### 5. other metrics from confusion matrix
+
+이외에도 다양한 비율을 지표로도 사용함: [wiki, Diagnostic testing diagram](https://en.wikipedia.org/wiki/Template:Diagnostic_testing_diagram)
+
+### 6. F-score, F-Measure
 
 General $`F_\beta-score`$, 여기서 $`\beta`$값은 R(recall)이 P(precision)의 $`\beta`$배 만큼 중요하다고 고려될 때 나타내는 값이다. ($`\beta`$는 양수만 고려됌)
 
 Van Rijsbergen's effectiveness measure에 기반한 아이디어
 
-$$F-score = \frac{1}{\alpha\frac{1}{P}+(1-\alpha)\frac{1}{R}} = \frac{(\beta^2+1)PR}{\beta^2P+R}$$
-$$\alpha=\frac{1}{1+\beta^2}$$
+```math
+F-score = \frac{1}{\alpha\frac{1}{P}+(1-\alpha)\frac{1}{R}} = \frac{(\beta^2+1)PR}{\beta^2P+R}
+\alpha=\frac{1}{1+\beta^2}
+```
 
 $`\alpha=1/2, \beta^2=1`$일 때, P와 R은 같은 가중치를 가지는 F-score이므로
 
 일반적으로 F1-score는 P와 R의 조화평균을 나타내는 지표로도 사용
 
-#### G-score, G-Measure
+특정 케이스에 대한 데이터가 부족(불균형)할 때(TN의 데이터가 FP, FN, TP와 다르게 현저히 부족할 때와 같은 상황) 많이 사용한다
 
-반대로 기하평균을 사용하는 경우
+### 7. ROC(Receiver Operating Characteristic) curve
 
-$$G-score = \sqrt{PR}$$
+fall-out : False Positive Rate(FPR) = 1 - Specificity
 
-### ROC(Receiver Operating Characteristic) curve
-fall-out : FPR = 1 - Specificity
+해당 실재에서 결과로 맞지 않은 비율(음성에만 해당)
 
-### AUC(Area Under Curve)
+```math
+total = N = FP + TN
+\frac{FP}{total}
+```
 
-### BLEU
+fall-out(FPR)에 대해 Sensitivity(TPR)의 변화를 평면으로 시각화한 곡선이 ROC curve이다
 
-### Rouge Score(Recall-Oriented Understudy for Gisting Evaluation)
+![ROC Curves](src/ROC%20Curves.png)
 
+### 8. AUC(Area Under Curve)
+
+ROC curve의 적분값(아래 면적 크기)을 나타낸다
+
+0.5 ~ 1의 범위를 가지며
+
+1에 가까울수록 모델의 분류성능이 뛰어남을 의미하고,
+
+0.5에 가까울수록 랜덤하게 분류함을 의미한다
 
 ## 확장
 
@@ -172,9 +224,9 @@ fall-out : FPR = 1 - Specificity
 각 class끼리 mutually exclusive함이 보장되지 않으므로 공통부분을 활용해 각 metric를  집합의 관계로 재해석할 필요가 있다.
 또는 완전히 동일한 경우만 판단하는 방법도 존재한다.
 
-- **Exact Match Ratio**
-- **0/1 Loss**
-- **Hamming Loss**
+- Exact Match Ratio
+- 0/1 Loss
+- Hamming Loss
 
 # REF
 
@@ -185,3 +237,5 @@ fall-out : FPR = 1 - Specificity
 5. https://en.wikipedia.org/wiki/Coefficient_of_determination
 6. https://docs.microsoft.com/ko-kr/azure/machine-learning/how-to-understand-automated-ml
 7. https://en.wikipedia.org/wiki/Confusion_matrix
+8. https://en.wikipedia.org/wiki/Receiver_operating_characteristic#/media/File:ROC_curves.svg
+9. https://www.youtube.com/watch?v=4jRBRDbJemM
